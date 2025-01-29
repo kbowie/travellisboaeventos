@@ -30,27 +30,6 @@
 
 	<!-- Head Libs -->
 	<script async src="assets/vendors/modernizr.min.js"></script>
-
-	<style>
-
-	.iconbox-color-pippin .iconbox-icon-container {
-		color: #ffffff;
-		background-color: #2D2F61;
-	}
-
-	.accordion-content {
-		color: #2D2F61;
-	}
-
-	.accordion-title {
-		font-family: 'europa', sans-serif;
-	}
-
-	body {
-		color: #2D2F61;
-	}
-
-	</style>
 	
 </head>
 <body data-mobile-nav-trigger-alignment="right" data-mobile-nav-align="left" data-mobile-nav-style="modern" data-mobile-nav-shceme="gray" data-mobile-header-scheme="gray" data-mobile-nav-breakpoint="1199">
@@ -266,28 +245,8 @@
 							  </svg>
 							</span>
 						  </a>
-						</div><!-- /.lqd-column col-md-12 -->
-					  </div><!-- /.row -->
-
-					  <div class="row" style="margin-top: 20px;">
-						<div class="lqd-column col-md-12" data-custom-animations="true" data-ca-options='{"triggerHandler":"inview", "animationTarget":"all-childs", "duration":"1600", "startDelay":"1300", "delay":"160", "easing":"easeOutQuint", "direction":"forward", "initValues":{"translateY":40, "opacity":0}, "animations":{"translateY":0, "opacity":1}}'>
+			
 			  
-						  <a href="https://app.ccetours.com/" class="btn btn-solid text-uppercase btn-md circle btn-bordered border-thin btn-gradient px-2" data-localscroll="true" data-localscroll-options='{"scrollBelowSection":true}'>
-							<span>
-							  <span class="btn-gradient-bg"></span>
-							  <span class="btn-txt">Open the APP</span>
-							  <span class="btn-gradient-bg btn-gradient-bg-hover"></span>
-							  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="btn-gradient-border" width="100%" height="100%">
-								<defs>
-								  <linearGradient id="svg-border-1" x1="0%" y1="0%" x2="100%" y2="0%">
-									<stop offset="0%"></stop>
-									<stop offset="100%"></stop>
-								  </linearGradient>
-								</defs>
-								<rect x="0.5" y="0.5" rx="29.5" ry="29.5" width="100%" height="100%" stroke="url(#svg-border-1)"></rect>
-							  </svg>
-							</span>
-						  </a>
 						</div><!-- /.lqd-column col-md-12 -->
 					  </div><!-- /.row -->
 			  
@@ -423,116 +382,27 @@
 								<div class="contents">
 									<h3 style="color: #fff;">Walk with Greatness: Royal Tales of Lisboa</h3>
 									<p><span style="color: #fff; font-size: 18px;line-height: 30px">
-										Welcome, brave adventurers, bold in your thirst for knowledge and discovery!
+										Get to know Lisbon and spend your time in a fun and fulfilling way!
 									</span></p>
 									<br>
 
-									<div class="audio-player">
-										<button id="playPauseBtn">
-											<svg id="playIcon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<polygon points="6,5 18,12 6,19" fill="#E5B87F"/>
-											</svg>
-											<svg id="pauseIcon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none;">
-												<rect x="6" y="5" width="4" height="14" fill="#E5B87F"/>
-												<rect x="14" y="5" width="4" height="14" fill="#E5B87F"/>
-											</svg>
-										</button>
-									
-										<span id="currentTime">0:00</span>
-										<input type="range" id="progressBar" value="0" step="0.1" min="0" max="100">
-										<span id="totalDuration">3:16</span>
-									
-										<audio id="audio">
+									<div class="audio-preview">
+										<audio controls>
 											<source src="https://firebasestorage.googleapis.com/v0/b/travel-app-qgmk9c.firebasestorage.app/o/intro%2FLissbon_excursion_intro.mp3?alt=media&token=4d91b8c5-c7b5-4215-a320-e7be625959ec" type="audio/mpeg">
 											Your browser does not support the audio element.
 										</audio>
 									</div>
-									
-									<style>
-										.audio-player {
-											display: flex;
-											align-items: center;
-											gap: 10px;
-											color: white;
-											font-family: Arial, sans-serif;
-											font-size: 14px;
-										}
-									
-										button {
-											background: none;
-											border: none;
-											cursor: pointer;
-											padding: 0;
-										}
-									
-										input[type="range"] {
-											width: 100%;
-											-webkit-appearance: none;
-											height: 4px;
-											background: #E5B87F;
-											border-radius: 2px;
-											cursor: pointer;
-										}
-									
-										input[type="range"]::-webkit-slider-thumb {
-											-webkit-appearance: none;
-											width: 12px;
-											height: 12px;
-											background: #E5B87F;
-											border-radius: 50%;
-										}
-									</style>
-									
-									<script>
-										const playPauseBtn = document.getElementById('playPauseBtn');
-										const audio = document.getElementById('audio');
-										const playIcon = document.getElementById('playIcon');
-										const pauseIcon = document.getElementById('pauseIcon');
-										const progressBar = document.getElementById('progressBar');
-										const currentTimeEl = document.getElementById('currentTime');
-										const totalDurationEl = document.getElementById('totalDuration');
-									
-										function formatTime(seconds) {
-											const minutes = Math.floor(seconds / 60);
-											const secs = Math.floor(seconds % 60);
-											return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-										}
-									
-										playPauseBtn.addEventListener('click', () => {
-											if (audio.paused) {
-												audio.play();
-												playIcon.style.display = 'none';
-												pauseIcon.style.display = 'inline';
-											} else {
-												audio.pause();
-												playIcon.style.display = 'inline';
-												pauseIcon.style.display = 'none';
-											}
-										});
-									
-										audio.addEventListener('loadedmetadata', () => {
-											totalDurationEl.textContent = formatTime(audio.duration);
-										});
-									
-										audio.addEventListener('timeupdate', () => {
-											progressBar.value = (audio.currentTime / audio.duration) * 100;
-											currentTimeEl.textContent = formatTime(audio.currentTime);
-										});
-									
-										progressBar.addEventListener('input', () => {
-											audio.currentTime = (progressBar.value / 100) * audio.duration;
-										});
-									</script>
-									
-									
-									
-									
 
 									<p><span style="color: #fff; font-size: 18px;line-height: 30px"><br>
-										
-Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Step onto this shore where Lisbon becomes more than a city—it’s an open-air theater. 
-<br><br>Every street whispers secrets, every building holds a story, and you are the hero of this journey. Led by the ghost of a king, this immersive audio tour transforms a two-hour walk into an unforgettable experience, blending history and art with voices of actors, music, and atmospheric sounds. 
-<br><br>Let the past come alive as dreams set sail and every moment breathes history.
+										The foundation of this experience is a meticulously planned, carefully thought-out real tour, transformed by a team of professionals into an immersive theatrical performance.  
+										<br><br>
+										With humor, ease, and authenticity, the resurrected King José will share spicy stories about the lives of aristocrats and commoners. You'll feel like an active participant in this theatrical spectacle—a medieval fairytale brought to life through headphones. The tour boasts excellent voice acting by professional actors, a rich musical score, and special effects.  
+										<br><br>
+										Thanks to the unique format of this tour, you have complete mobility. You can pause at any time to enjoy a hearty meal at a charming restaurant along the carefully planned route or take memorable photos of unique locations.  
+										<br><br>
+										Our performance is designed for individual use, meaning you won’t depend on anyone else—just your own preferences and pace.  
+										<br><br>
+										Explore the city at your own rhythm, combining fun and discovery!
 									</span></p>
 
 
@@ -618,10 +488,16 @@ Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Ste
 
 							<p class="font-size-18 lh-30 mb-55">
 								<span style="color: #2E305E;">
-									Each detail of the tour is crafted with a love for history, respect for your time, and a sincere desire to bring you joy. 
-									<br><br>It’s more than just a sightseeing tour—it's an opportunity to feel the city's modern rhythm, uncover its secrets, and touch its soul. 
-									<br><br>Every aspect is thoughtfully designed with a passion for history, travel, and most importantly, your comfort and time. 
-									<br><br>This is not just a tour—it’s a chance to hear the city’s voice, connect with its soul, and discover the secrets it keeps.</span>							
+								We’ll begin our journey in a square haunted by the restless souls of beautiful young women executed for witchcraft.  
+								Discover who watches over Lisbon and who gifted Brazil its independence.  
+								<br><br>
+								José will guide you to the finest examples of an architectural style born in Portugal during the Age of Discovery—magnificent facades adorned with stone lacework that will transport you centuries back in time.  
+								<br><br>
+								Our ghostly guide will unveil the secret of a popular Portuguese dessert, still guarded by monks away from prying eyes.  
+								He’ll show you a remarkable spot that perfectly illustrates the influence of the Arab world on local culture.  
+								<br><br>
+								There’s so much to say about Lisbon and Portugal as a whole, but José has handpicked the most intriguing and fascinating moments to share with you during this two-hour tour.
+								</span>							
 							</p>
 
 						</div>
@@ -631,6 +507,146 @@ Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Ste
 				</div><!-- /.container -->
 			</section><!-- /.vc_row -->
 			
+
+			<section class="vc_row pt-130 pb-100">
+				<div class="container">
+					<div class="row d-flex flex-wrap align-items-center">
+						<div class="lqd-column col-md-6 mb-5 mb-md-0">
+							<h2 class="pr-md-7 mb-4 mt-0 font-weight-bold">Discover Lisbon with the Ghost King - Interactive Audio Experience</h2>
+							<p class="mb-40">Embark on a unique journey through Lisbon's storied streets guided by a most unusual companion - the Ghost King himself. This immersive audio experience combines theatrical storytelling, historical insights, and local culture into one unforgettable adventure across 42 carefully curated locations.</p>
+			
+							<a href="https://app.ccetours.com/" target="_blank" class="btn btn-solid circle font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
+								<span>
+									<span class="btn-txt">Start Your Journey</span>
+									<span class="btn-icon">
+										<i class="fa fa-angle-right"></i>
+									</span>
+								</span>
+							</a>
+						</div>
+			
+						<div class="lqd-column col-md-6">
+							<div class="accordion accordion-md accordion-active-has-fill accordion-title-round accordion-titles-gray" id="accordion-10" role="tablist">
+								
+								<div class="accordion-item panel mb-3 active">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-1">
+										<h4 class="accordion-title font-size-15">
+											<a data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-panel-1" aria-expanded="true" aria-controls="accordion-10-panel-1">
+												What makes this tour special?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-panel-1" class="accordion-collapse collapse in" role="tabpanel" aria-labelledby="accordion-10-heading-1">
+										<div class="accordion-content pt-30">
+											<p>This isn't just a regular audio guide - it's an immersive theatrical experience featuring professional voice actors, carefully crafted sound effects, and an engaging storyline. The Ghost King, your spectral guide, brings history to life while mixing in humor, spooky moments, and insider knowledge about modern Portuguese life.</p>
+										</div>
+									</div>
+								</div>
+			
+								<div class="accordion-item panel mb-3">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-2">
+										<h4 class="accordion-title font-size-15">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-2" aria-expanded="false" aria-controls="accordion-10-collapse-2">
+												How does the tour work?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-collapse-2" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-2">
+										<div class="accordion-content pt-30">
+											<p>Simply arrive at the starting point, open the app, put on your headphones, and step into a different dimension. You'll have access to a real-time interactive map, but don't worry - the Ghost King will guide you through every turn and stop. The audio is perfectly synchronized with the route, creating a seamless experience.</p>
+										</div>
+									</div>
+								</div>
+			
+								<div class="accordion-item panel mb-3">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-3">
+										<h4 class="accordion-title font-size-15">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-3" aria-expanded="false" aria-controls="accordion-10-collapse-3">
+												How flexible is the tour?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-collapse-3" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-3">
+										<div class="accordion-content pt-30">
+											<p>Entirely at your pace! You can pause anytime for photos, refreshments, or rest; split the tour across multiple days; take detours as you wish; and stop for recommended wine tastings and local dishes. The tour is designed to help you reach Lisbon's highest points while avoiding steep climbs, making it comfortable even in this city of seven hills.</p>
+										</div>
+									</div>
+								</div>
+			
+								<div class="accordion-item panel mb-3">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-4">
+										<h4 class="accordion-title font-size-15">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-4" aria-expanded="false" aria-controls="accordion-10-collapse-4">
+												What kind of content can I expect?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-collapse-4" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-4">
+										<div class="accordion-content pt-30">
+											<p>The tour combines historical storytelling through an engaging audio performance, lesser-known facts about famous landmarks, hidden gems off the typical tourist path, local cultural insights and contemporary Portuguese life, culinary and wine recommendations, and occasional jokes and spooky moments from your ghostly guide.</p>
+										</div>
+									</div>
+								</div>
+			
+								<div class="accordion-item panel mb-3">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-5">
+										<h4 class="accordion-title font-size-15">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-5" aria-expanded="false" aria-controls="accordion-10-collapse-5">
+												How immersive is the experience?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-collapse-5" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-5">
+										<div class="accordion-content pt-30">
+											<p>Thanks to professional voice acting, masterful sound design, and a dynamic script, you'll feel like you're walking through living history. The streets of Lisbon become your theater, where past meets present in an engaging performance.</p>
+										</div>
+									</div>
+								</div>
+			
+								<div class="accordion-item panel mb-3">
+									<div class="accordion-heading" role="tab" id="accordion-10-heading-6">
+										<h4 class="accordion-title font-size-15">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-6" aria-expanded="false" aria-controls="accordion-10-collapse-6">
+												Who is this tour suitable for?
+												<span class="accordion-expander">
+													<i class="fa fa-angle-up"></i>
+													<i class="fa fa-angle-down"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="accordion-10-collapse-6" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-6">
+										<div class="accordion-content pt-30">
+											<p>This tour is recommended for visitors aged 16+ due to historical content, wine tasting references, and some mildly spooky elements. It's perfect for history enthusiasts who prefer entertainment over dry facts, culture lovers seeking authentic local insights, photography enthusiasts looking for unique perspectives, food and wine aficionados interested in local recommendations, and anyone wanting to explore Lisbon beyond the typical tourist experience.</p>
+										</div>
+									</div>
+								</div>
+			
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
 			<section class="vc_row pt-60 pb-30">
 				<div class="container">
@@ -719,144 +735,167 @@ Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Ste
 			</section>
 
 
-			<section class="vc_row pt-130 pb-100">
+			<section class="vc_row pt-40 pb-100">
 				<div class="container">
 					<div class="row d-flex flex-wrap align-items-center">
-						<div class="lqd-column col-md-6 mb-5 mb-md-0">
-							<h2 class="pr-md-7 mb-4 mt-0 font-weight-bold">Discover Lisbon with the Ghost King - Interactive Audio Experience</h2>
-							<p class="mb-40">Embark on a unique journey through Lisbon's storied streets guided by a most unusual companion - the Ghost King himself. This immersive audio experience combines theatrical storytelling, historical insights, and local culture into one unforgettable adventure across 42 carefully curated locations.</p>
+
+						<div
+							class="lqd-column col-md-5"
+							data-custom-animations="true"
+							data-ca-options='{"triggerHandler":"inview","animationTarget":"all-childs","duration":"1200","delay":"120","easing":"easeOutQuint","direction":"forward","initValues":{"translateX":-37,"opacity":0},"animations":{"translateX":0,"opacity":1}}'>
+
+							<header class="fancy-title fancy-title-underlined pr-md-2 pb-6">
+								<h2 class="pr-md-7 mr-md-6 mb-30">Immersive Time Travel</h2>
+								<p>Embark on an extraordinary journey where history meets innovation. Our immersive audio tour brings the past to life with professional narration, rich sound effects, and captivating storytelling. Whether exploring solo or with companions, this experience adapts to your pace, allowing you to fully engage with the fascinating history and culture around you. Step into the story and let time unfold before your ears!</p>
+							</header><!-- /.fancy-title -->
+
+							<h5>Complete Freedom</h5>
+							<p class="mb-5">Your personal guide that never rushes you. The route is meticulously planned with real-time map coordination and audio synchronized to a leisurely walk.</p>
+
+							<h5>Personal Adventure</h5>
+							<p>Perfect for everyone - from solo travelers to couples and groups. Ideal for creative minds who appreciate storytelling and unique cultural experiences.</p>
+
+						</div><!-- /.col-md-5 -->
+
+						<div class="lqd-column col-md-6 col-md-offset-1">
+
+							<div class="liquid-img-group-container stretch-to-right">
+								<div class="liquid-img-group-inner">
+									<div class="liquid-img-group-single liquid-img-group-browser" data-shadow-style="4" data-inview="true" data-animate-shadow="true" data-reveal="true" data-reveal-options='{"direction":"lr"}'>
+										<span class="liquid-img-group-url"><span>https://</span>ccetours.com</span>
+										<div class="liquid-img-group-img-container">
+											<div class="liquid-img-container-inner">
+												<figure data-responsive-bg="true">
+													<img src="./image_cce_lisbon.jpg" alt="CCE Tours" />
+												</figure>
+											</div><!-- /.liquid-img-container-inner -->
+										</div><!-- /.liquid-img-group-img-container -->
+									</div><!-- /.liquid-img-group-single -->
+								</div><!-- /.liquid-img-group-inner -->
+							</div><!-- /.liquid-img-group-container -->
+
+						</div><!-- /.col-lg-6 col-lg-offset-2 -->
+
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section>
+
+			<section class="vc_row pt-100 pb-100">
+				<div class="container">
+					<div class="row">
+
+						<div class="lqd-column col-md-6">
+
+							<div class="iconbox iconbox-side iconbox-circle iconbox-sm iconbox-icon-linked iconbox-heading-xs mb-50">
+								<div class="iconbox-icon-wrap">
+									<span class="iconbox-icon-container">
+										<span class="iconbox-icon-hover-bg bg-dark"></span>
+										<i class="icon-num-1"></i>
+									</span>
+								</div><!-- /.iconbox-icon-wrap -->
+								<div class="contents">
+									<h3 class="font-weight-semibold">IMMERSIVE JOURNEY</h3>
+									<p>Forget the boundaries between reality and art—step into an experience that will stay with you forever. Let Lisbon tell its story just for you.</p>
+								</div><!-- /.contents -->
+							</div><!-- /.iconbox -->
+
+							<div class="iconbox iconbox-side iconbox-circle iconbox-sm iconbox-icon-linked iconbox-heading-xs mb-50">
+								<div class="iconbox-icon-wrap">
+									<span class="iconbox-icon-container">
+										<span class="iconbox-icon-hover-bg bg-dark"></span>
+										<i class="icon-num-2"></i>
+									</span>
+								</div><!-- /.iconbox-icon-wrap -->
+								<div class="contents">
+									<h3 class="font-weight-semibold">STEP INTO HISTORY
+									</h3>
+									<p>Ready to take a walk where every step is a new scene in a grand historical play?
+
+									</p>
+								</div><!-- /.contents -->
+							</div><!-- /.iconbox -->
+
+							<div class="iconbox iconbox-side iconbox-circle iconbox-sm iconbox-icon-linked iconbox-heading-xs mb-50">
+								<div class="iconbox-icon-wrap">
+									<span class="iconbox-icon-container">
+										<span class="iconbox-icon-hover-bg bg-dark"></span>
+										<i class="icon-num-3"></i>
+									</span>
+								</div><!-- /.iconbox-icon-wrap -->
+								<div class="contents">
+									<h3 class="font-weight-semibold">LIVING THEATER
+									</h3>
+									<p>Let Lisbon guide you through the stages of its eternal performance.
+
+									</p>
+								</div><!-- /.contents -->
+							</div><!-- /.iconbox -->
+
+						</div><!-- /.lqd-column col-md-6 -->
+						
+						<div class="lqd-column col-md-6 text-md-right">
+
+							<figure>
+								<img src="./image_alfama.jpg" style="border-radius: 10px;" alt="CCE tour">
+							</figure>
+
+						</div><!-- /.lqd-column col-md-6 -->
+
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section>
+
 			
-							<a href="https://app.ccetours.com/" target="_blank" class="btn btn-solid circle font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
+
+			<section class="vc_row pt-95 pb-80 mt-80 bg-cover" id="buy" style="background-image: url(./bg-catch-app.jpg);" data-parallax="true" data-parallax-options='{"parallaxBG": true}'>
+				<div class="container">
+					<div class="row">
+	
+						<div class="lqd-column col-md-8">
+	
+							<div class="ld-fancy-heading mask-text">
+								<h2
+									class="text-white"
+									data-fittext="true"
+									data-fittext-options='{"compressor":0.55, "maxFontSize": 45, "minFontSize":35 }'
+									data-split-text="true"
+									data-custom-animations="true"
+									data-ca-options='{"triggerHandler":"inview","animationTarget":".split-inner","duration":700,"delay":100,"easing":"easeOutQuint","direction":"forward","initValues":{"translateY":84,"rotateZ":10},"animations":{"translateY":0,"rotateZ":0}}'
+									data-split-options='{"type":"lines"}'>
+									<span class="ld-fh-txt">
+										Forget the usual routes!<br />
+										<span style="font-size: 16px;">Let Lisbon whisper its secrets just to you. Awaken the explorer, the romantic, and the actor within!</span>
+									</span>
+								</h2>
+							</div><!-- /.ld-fancy-heading -->
+	
+						</div><!-- /.col-md-8 -->
+	
+						<div class="lqd-column col-md-3 col-md-offset-1 text-center">
+							
+							<a href="https://app.ccetours.com/" style="border: 1px solid #fff;" target="_blank" class="btn btn-solid circle font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
 								<span>
-									<span class="btn-txt">Start Your Journey</span>
+									<span class="btn-txt">Begin Your Journey</span>
 									<span class="btn-icon">
 										<i class="fa fa-angle-right"></i>
 									</span>
 								</span>
 							</a>
-						</div>
-			
-						<div class="lqd-column col-md-6">
-							<div class="accordion accordion-md accordion-active-has-fill accordion-title-round accordion-titles-gray" id="accordion-10" role="tablist">
-								
-								<div class="accordion-item panel mb-3 active">
-									<div class="accordion-heading" role="tab" id="accordion-10-heading-1">
-										<h4 class="accordion-title">
-											<a data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-panel-1" aria-expanded="true" aria-controls="accordion-10-panel-1">
-												What makes this tour special?
-												<span class="accordion-expander">
-													<i class="fa fa-angle-up"></i>
-													<i class="fa fa-angle-down"></i>
-												</span>
-											</a>
-										</h4>
-									</div>
-									<div id="accordion-10-panel-1" class="accordion-collapse collapse in" role="tabpanel" aria-labelledby="accordion-10-heading-1">
-										<div class="accordion-content pt-30">
-											<p>This isn't just a regular audio guide - it's an immersive theatrical experience featuring professional voice actors, carefully crafted sound effects, and an engaging storyline. The Ghost King, your spectral guide, brings history to life while mixing in humor, spooky moments, and insider knowledge about modern Portuguese life.</p>
-										</div>
-									</div>
-								</div>
-			
-								<div class="accordion-item panel mb-3">
-									<div class="accordion-heading" role="tab" id="accordion-10-heading-2">
-										<h4 class="accordion-title">
-											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-2" aria-expanded="false" aria-controls="accordion-10-collapse-2">
-												How does the tour work?
-												<span class="accordion-expander">
-													<i class="fa fa-angle-up"></i>
-													<i class="fa fa-angle-down"></i>
-												</span>
-											</a>
-										</h4>
-									</div>
-									<div id="accordion-10-collapse-2" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-2">
-										<div class="accordion-content pt-30">
-											<p>Simply arrive at the starting point, open the app, put on your headphones, and step into a different dimension. You'll have access to a real-time interactive map, but don't worry - the Ghost King will guide you through every turn and stop. The audio is perfectly synchronized with the route, creating a seamless experience.</p>
-										</div>
-									</div>
-								</div>
-			
-								<div class="accordion-item panel mb-3">
-									<div class="accordion-heading" role="tab" id="accordion-10-heading-3">
-										<h4 class="accordion-title">
-											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-3" aria-expanded="false" aria-controls="accordion-10-collapse-3">
-												How flexible is the tour?
-												<span class="accordion-expander">
-													<i class="fa fa-angle-up"></i>
-													<i class="fa fa-angle-down"></i>
-												</span>
-											</a>
-										</h4>
-									</div>
-									<div id="accordion-10-collapse-3" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-3">
-										<div class="accordion-content pt-30">
-											<p>Entirely at your pace! You can pause anytime for photos, refreshments, or rest; split the tour across multiple days; take detours as you wish; and stop for recommended wine tastings and local dishes. The tour is designed to help you reach Lisbon's highest points while avoiding steep climbs, making it comfortable even in this city of seven hills.</p>
-										</div>
-									</div>
-								</div>
-			
-								<div class="accordion-item panel mb-3">
-									<div class="accordion-heading" role="tab" id="accordion-10-heading-4">
-										<h4 class="accordion-title">
-											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-4" aria-expanded="false" aria-controls="accordion-10-collapse-4">
-												What kind of content can I expect?
-												<span class="accordion-expander">
-													<i class="fa fa-angle-up"></i>
-													<i class="fa fa-angle-down"></i>
-												</span>
-											</a>
-										</h4>
-									</div>
-									<div id="accordion-10-collapse-4" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-4">
-										<div class="accordion-content pt-30">
-											<p>The tour combines historical storytelling through an engaging audio performance, lesser-known facts about famous landmarks, hidden gems off the typical tourist path, local cultural insights and contemporary Portuguese life, culinary and wine recommendations, and occasional jokes and spooky moments from your ghostly guide.</p>
-										</div>
-									</div>
-								</div>
-			
-								<div class="accordion-item panel mb-3">
-									<div class="accordion-heading" role="tab" id="accordion-10-heading-5">
-										<h4 class="accordion-title">
-											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-5" aria-expanded="false" aria-controls="accordion-10-collapse-5">
-												How immersive is the experience?
-												<span class="accordion-expander">
-													<i class="fa fa-angle-up"></i>
-													<i class="fa fa-angle-down"></i>
-												</span>
-											</a>
-										</h4>
-									</div>
-									<div id="accordion-10-collapse-5" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-5">
-										<div class="accordion-content pt-30">
-											<p>Thanks to professional voice acting, masterful sound design, and a dynamic script, you'll feel like you're walking through living history. The streets of Lisbon become your theater, where past meets present in an engaging performance.</p>
-										</div>
-									</div>
-								</div>
-			
-								<div class="accordion-item panel mb-3">
-									<div class="accordion-heading" role="tab" id="accordion-10-heading-6">
-										<h4 class="accordion-title">
-											<a class="collapsed" data-toggle="collapse" data-parent="#accordion-10" href="#accordion-10-collapse-6" aria-expanded="false" aria-controls="accordion-10-collapse-6">
-												Who is this tour suitable for?
-												<span class="accordion-expander">
-													<i class="fa fa-angle-up"></i>
-													<i class="fa fa-angle-down"></i>
-												</span>
-											</a>
-										</h4>
-									</div>
-									<div id="accordion-10-collapse-6" class="accordion-collapse collapse" role="tabpanel" aria-labelledby="accordion-10-heading-6">
-										<div class="accordion-content pt-30">
-											<p>This tour is recommended for visitors aged 16+ due to historical content, wine tasting references, and some mildly spooky elements. It's perfect for history enthusiasts who prefer entertainment over dry facts, culture lovers seeking authentic local insights, photography enthusiasts looking for unique perspectives, food and wine aficionados interested in local recommendations, and anyone wanting to explore Lisbon beyond the typical tourist experience.</p>
-										</div>
-									</div>
-								</div>
-			
-							</div>
-						</div>
-					</div>
-				</div>
+	
+							<div class="ld-fancy-heading mt-3">
+								<p
+									class="text-white opacity-07"
+									data-split-text="true"
+									data-custom-animations="true"
+									data-ca-options='{"triggerHandler":"inview","animationTarget":".split-inner","duration":700,"delay":100,"easing":"easeOutQuint","direction":"forward","initValues":{"scale":1},"animations":{"scale":1}}' data-split-options='{"type":"lines"}'>
+									<span class="ld-fh-txt">Open Tour App</span>
+								</p>
+							</div><!-- /.ld-fancy-heading -->
+	
+						</div><!-- /.col-md-3 -->
+	
+					</div><!-- /.row -->
+				</div><!-- /.container -->
 			</section>
 
 			
@@ -1015,174 +1054,9 @@ Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Ste
 
 					</div><!-- /.row -->
 
-					
-
-				</div><!-- /.container -->
-			</section><!-- /.vc_row pt-90 pb-90 -->
-
-			<section class="vc_row pt-40 pb-100">
-				<div class="container">
-					<div class="row d-flex flex-wrap align-items-center">
-
-						<div
-							class="lqd-column col-md-5"
-							data-custom-animations="true"
-							data-ca-options='{"triggerHandler":"inview","animationTarget":"all-childs","duration":"1200","delay":"120","easing":"easeOutQuint","direction":"forward","initValues":{"translateX":-37,"opacity":0},"animations":{"translateX":0,"opacity":1}}'>
-
-							<header class="fancy-title fancy-title-underlined pr-md-2 pb-6">
-								<h2 class="pr-md-7 mr-md-6 mb-30">Immersive Time Travel</h2>
-								<p>Embark on an extraordinary journey where history meets innovation. Our immersive audio tour brings the past to life with professional narration, rich sound effects, and captivating storytelling. Whether exploring solo or with companions, this experience adapts to your pace, allowing you to fully engage with the fascinating history and culture around you. Step into the story and let time unfold before your ears!</p>
-							</header><!-- /.fancy-title -->
-
-							<h5>Complete Freedom</h5>
-							<p class="mb-5">Your personal guide that never rushes you. The route is meticulously planned with real-time map coordination and audio synchronized to a leisurely walk.</p>
-
-							<h5>Personal Adventure</h5>
-							<p>Perfect for everyone - from solo travelers to couples and groups. Ideal for creative minds who appreciate storytelling and unique cultural experiences.</p>
-
-						</div><!-- /.col-md-5 -->
-
-						<div class="lqd-column col-md-6 col-md-offset-1">
-
-							<div class="liquid-img-group-container stretch-to-right">
-								<div class="liquid-img-group-inner">
-									<div class="liquid-img-group-single liquid-img-group-browser" data-shadow-style="4" data-inview="true" data-animate-shadow="true" data-reveal="true" data-reveal-options='{"direction":"lr"}'>
-										<span class="liquid-img-group-url"><span>https://</span>ccetours.com</span>
-										<div class="liquid-img-group-img-container">
-											<div class="liquid-img-container-inner">
-												<figure data-responsive-bg="true">
-													<img src="./image_cce_lisbon.jpg" alt="CCE Tours" />
-												</figure>
-											</div><!-- /.liquid-img-container-inner -->
-										</div><!-- /.liquid-img-group-img-container -->
-									</div><!-- /.liquid-img-group-single -->
-								</div><!-- /.liquid-img-group-inner -->
-							</div><!-- /.liquid-img-group-container -->
-
-						</div><!-- /.col-lg-6 col-lg-offset-2 -->
-
-					</div><!-- /.row -->
-				</div><!-- /.container -->
-			</section>
-
-			<section class="vc_row pt-95 pb-80 mt-80 bg-cover" id="buy" style="background-image: url(./bg-catch-app.jpg);" data-parallax="true" data-parallax-options='{"parallaxBG": true}'>
-				<div class="container">
-					<div class="row">
-	
-						<div class="lqd-column col-md-8">
-	
-							<div class="ld-fancy-heading mask-text">
-								<h2
-									class="text-white"
-									data-fittext="true"
-									data-fittext-options='{"compressor":0.55, "maxFontSize": 45, "minFontSize":35 }'
-									data-split-text="true"
-									data-custom-animations="true"
-									data-ca-options='{"triggerHandler":"inview","animationTarget":".split-inner","duration":700,"delay":100,"easing":"easeOutQuint","direction":"forward","initValues":{"translateY":84,"rotateZ":10},"animations":{"translateY":0,"rotateZ":0}}'
-									data-split-options='{"type":"lines"}'>
-									<span class="ld-fh-txt">
-										Forget the usual routes!<br />
-										<span style="font-size: 16px;">Let Lisbon whisper its secrets just to you. Awaken the explorer, the romantic, and the actor within!</span>
-									</span>
-								</h2>
-							</div><!-- /.ld-fancy-heading -->
-	
-						</div><!-- /.col-md-8 -->
-	
-						<div class="lqd-column col-md-3 col-md-offset-1 text-center">
-							
-							<a href="https://app.ccetours.com/" style="border: 1px solid #fff;" target="_blank" class="btn btn-solid circle font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
-								<span>
-									<span class="btn-txt">Begin Your Journey</span>
-									<span class="btn-icon">
-										<i class="fa fa-angle-right"></i>
-									</span>
-								</span>
-							</a>
-	
-							<div class="ld-fancy-heading mt-3">
-								<p
-									class="text-white opacity-07"
-									data-split-text="true"
-									data-custom-animations="true"
-									data-ca-options='{"triggerHandler":"inview","animationTarget":".split-inner","duration":700,"delay":100,"easing":"easeOutQuint","direction":"forward","initValues":{"scale":1},"animations":{"scale":1}}' data-split-options='{"type":"lines"}'>
-									<span class="ld-fh-txt">Open Tour App</span>
-								</p>
-							</div><!-- /.ld-fancy-heading -->
-	
-						</div><!-- /.col-md-3 -->
-	
-					</div><!-- /.row -->
-				</div><!-- /.container -->
-			</section>
-			
-			<section class="vc_row pt-100 pb-100">
-				<div class="container">
-					<div class="row">
-
-						<div class="lqd-column col-md-6">
-
-							<div class="iconbox iconbox-side iconbox-circle iconbox-sm iconbox-icon-linked iconbox-heading-xs mb-50">
-								<div class="iconbox-icon-wrap">
-									<span class="iconbox-icon-container">
-										<span class="iconbox-icon-hover-bg bg-dark"></span>
-										<i class="icon-num-1"></i>
-									</span>
-								</div><!-- /.iconbox-icon-wrap -->
-								<div class="contents">
-									<h3 class="font-weight-semibold">IMMERSIVE JOURNEY</h3>
-									<p>Forget the boundaries between reality and art—step into an experience that will stay with you forever. Let Lisbon tell its story just for you.</p>
-								</div><!-- /.contents -->
-							</div><!-- /.iconbox -->
-
-							<div class="iconbox iconbox-side iconbox-circle iconbox-sm iconbox-icon-linked iconbox-heading-xs mb-50">
-								<div class="iconbox-icon-wrap">
-									<span class="iconbox-icon-container">
-										<span class="iconbox-icon-hover-bg bg-dark"></span>
-										<i class="icon-num-2"></i>
-									</span>
-								</div><!-- /.iconbox-icon-wrap -->
-								<div class="contents">
-									<h3 class="font-weight-semibold">STEP INTO HISTORY
-									</h3>
-									<p>Ready to take a walk where every step is a new scene in a grand historical play?
-
-									</p>
-								</div><!-- /.contents -->
-							</div><!-- /.iconbox -->
-
-							<div class="iconbox iconbox-side iconbox-circle iconbox-sm iconbox-icon-linked iconbox-heading-xs mb-50">
-								<div class="iconbox-icon-wrap">
-									<span class="iconbox-icon-container">
-										<span class="iconbox-icon-hover-bg bg-dark"></span>
-										<i class="icon-num-3"></i>
-									</span>
-								</div><!-- /.iconbox-icon-wrap -->
-								<div class="contents">
-									<h3 class="font-weight-semibold">LIVING THEATER
-									</h3>
-									<p>Let Lisbon guide you through the stages of its eternal performance.
-
-									</p>
-								</div><!-- /.contents -->
-							</div><!-- /.iconbox -->
-
-						</div><!-- /.lqd-column col-md-6 -->
-						
-						<div class="lqd-column col-md-6 text-md-right">
-
-							<figure>
-								<img src="./image_alfama.jpg" style="border-radius: 10px;" alt="CCE tour">
-							</figure>
-
-						</div><!-- /.lqd-column col-md-6 -->
-
-					</div><!-- /.row -->
-
-
 					<div class="lqd-space visible-lg visible-md- mb-200"></div>
 
-					<div id="works" class="row" style="margin-top: 80px;">
+					<div id="works" class="row">
 
 						<div class="lqd-column col-md-12">
 
@@ -1281,11 +1155,12 @@ Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Ste
 
 					</div><!-- /.row -->
 
-					
 				</div><!-- /.container -->
-			</section>
+			</section><!-- /.vc_row pt-90 pb-90 -->
 
-			<section class="vc_row pt-100 pb-100" id="testimonials">
+
+
+			<section class="vc_row pt-200 pb-100" id="testimonials">
 				<div class="container">
 					<div class="row">
 	
@@ -1295,9 +1170,7 @@ Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Ste
 	
 								<h6 class="text-uppercase">Feedback</h6>
 								<h2 class="mt-4 mb-4">What our tourists said</h2>
-								<p>We are honored to have such a diverse group of travelers who have embarked on this unforgettable journey with us. Here’s what they had to say:
-
-								</p>
+								<p>We’re humbled to be working with such a great variety of clients that range from early stage startups to Fortune 500 companies.</p>
 	
 							</header><!-- /.fancy-title -->
 	
@@ -1309,101 +1182,71 @@ Welcome, brave adventurers, bold in your thirst for knowledge and discovery! Ste
 	
 								<div class="carousel-items">
 		
-									
 									<div class="carousel-item is-active">
+		
 										<div class="testimonial testimonial-whole-filled testimonial-whole-shadowed text-left testimonial-details-sm testimonial-avatar-sm">
 											<div class="testimonial-quote">
 												<blockquote>
-													<p class="font-size-16 lh-185"><b>✯ Amazing experience!</b><br>"This was unlike any tour I’ve ever taken! The storytelling, the music, the atmosphere—it truly felt like stepping into another world. Highly recommend!"</p>
+													<p class="font-size-16 lh-185">“Original, creative and with an innate understanding of their customer’s needs, the team at Ave Agency are always a pleasure to work with.”</p>
 												</blockquote>
-											</div>
+											</div><!-- /.testimonial-quote -->
 											<div class="testimonial-details">
 												<figure class="avatar ">
-													<img src="./assets/demo/testimonials/testi-3.png" alt="Emily R., USA">
+													<img src="./assets/demo/testimonials/testi-3.png" alt="Suke Tran">
 												</figure>
 												<div class="testimonial-info">
-													<h5>Emily R., USA</h5>
-												</div>
-												<time datetime="2025-01-29" class="text-uppercase">Now</time>
-											</div>
-										</div>
-									</div>
-									
+													<h5>Suke Tran</h5>
+													<h6 class="font-weight-normal">Sumo Founder</h6>
+												</div><!-- /.testimonial-info -->
+												<time datetime="2017-07-07" class="text-uppercase">Now</time>
+											</div><!-- /.testimonial-details -->
+										</div><!-- /.testimonial -->
+		
+									</div><!-- /.carousel-item -->
+		
 									<div class="carousel-item">
+		
 										<div class="testimonial testimonial-whole-filled testimonial-whole-shadowed text-left testimonial-details-sm testimonial-avatar-sm">
 											<div class="testimonial-quote">
 												<blockquote>
-													<p class="font-size-16 lh-185"><b>🎭 A theatrical adventure</b><br>"The ghost of the king was such a charming and witty guide! The mix of history, humor, and immersive sound design made this walk through Lisbon absolutely magical."</p>
+													<p class="font-size-16 lh-185">“Original, creative and with an innate understanding of their customer’s needs, the team at Ave Agency are always a pleasure to work with.”</p>
 												</blockquote>
-											</div>
+											</div><!-- /.testimonial-quote -->
 											<div class="testimonial-details">
 												<figure class="avatar ">
-													<img src="./assets/demo/testimonials/testi-2.png" alt="Carlos M., Spain">
+													<img src="./assets/demo/testimonials/testi-4.png" alt="Suke Tran">
 												</figure>
 												<div class="testimonial-info">
-													<h5>Carlos M., Spain</h5>
-												</div>
-												<time datetime="2025-01-29" class="text-uppercase">Now</time>
-											</div>
-										</div>
-									</div>
-									
+													<h5>Suke Tran</h5>
+													<h6 class="font-weight-normal">Sumo Founder</h6>
+												</div><!-- /.testimonial-info -->
+												<time datetime="2017-07-07" class="text-uppercase">Now</time>
+											</div><!-- /.testimonial-details -->
+										</div><!-- /.testimonial -->
+		
+									</div><!-- /.carousel-item -->
+		
 									<div class="carousel-item">
+		
 										<div class="testimonial testimonial-whole-filled testimonial-whole-shadowed text-left testimonial-details-sm testimonial-avatar-sm">
 											<div class="testimonial-quote">
 												<blockquote>
-													<p class="font-size-16 lh-185"><b>📝 History comes alive</b><br>"I usually find historical tours a bit dry, but this was different. The way the past was brought to life with voices and effects was incredible. I felt like I was part of the story!"</p>
+													<p class="font-size-16 lh-185">“Original, creative and with an innate understanding of their customer’s needs, the team at Ave Agency are always a pleasure to work with.”</p>
 												</blockquote>
-											</div>
+											</div><!-- /.testimonial-quote -->
 											<div class="testimonial-details">
-												<figure class="avatar ">
-													<img src="./assets/demo/testimonials/testi-2.png" alt="Sophie L., France">
+												<figure class="avatar">
+													<img src="./assets/demo/testimonials/testi-5.png" alt="Suke Tran">
 												</figure>
 												<div class="testimonial-info">
-													<h5>Sophie L., France</h5>
-												</div>
-												<time datetime="2025-01-29" class="text-uppercase">Now</time>
-											</div>
-										</div>
-									</div>
-									
-									<div class="carousel-item">
-										<div class="testimonial testimonial-whole-filled testimonial-whole-shadowed text-left testimonial-details-sm testimonial-avatar-sm">
-											<div class="testimonial-quote">
-												<blockquote>
-													<p class="font-size-16 lh-185"><b>🎧 Perfect for solo travelers</b><br>"Exploring Lisbon at my own pace while listening to such a beautifully crafted audio experience was a dream. I could pause, take photos, and even stop for a glass of wine—just as the ghost suggested!"</p>
-												</blockquote>
-											</div>
-											<div class="testimonial-details">
-												<figure class="avatar ">
-													<img src="./assets/demo/testimonials/testi-4.png" alt="Liam K., UK">
-												</figure>
-												<div class="testimonial-info">
-													<h5>Liam K., UK</h5>
-												</div>
-												<time datetime="2025-01-29" class="text-uppercase">Now</time>
-											</div>
-										</div>
-									</div>
-									
-									<div class="carousel-item">
-										<div class="testimonial testimonial-whole-filled testimonial-whole-shadowed text-left testimonial-details-sm testimonial-avatar-sm">
-											<div class="testimonial-quote">
-												<blockquote>
-													<p class="font-size-16 lh-185"><b>🌍 A must-do in Lisbon</b><br>"If you want to experience the city in a unique way, this tour is a must. It’s fun, engaging, and full of surprises. I’ll be recommending it to all my friends!"</p>
-												</blockquote>
-											</div>
-											<div class="testimonial-details">
-												<figure class="avatar ">
-													<img src="./assets/demo/testimonials/testi-5.png" alt="Anna S., Germany">
-												</figure>
-												<div class="testimonial-info">
-													<h5>Anna S., Germany</h5>
-												</div>
-												<time datetime="2025-01-29" class="text-uppercase">Now</time>
-											</div>
-										</div>
-									</div>
+													<h5>Suke Tran</h5>
+													<h6 class="font-weight-normal">Sumo Founder</h6>
+												</div><!-- /.testimonial-info -->
+												<time datetime="2017-07-07" class="text-uppercase">Now</time>
+											</div><!-- /.testimonial-details -->
+										</div><!-- /.testimonial -->
+		
+									</div><!-- /.carousel-item -->
 	
 								</div><!-- /.carousel-items -->
 	
