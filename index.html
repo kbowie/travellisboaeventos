@@ -31,6 +31,124 @@
 	<!-- Head Libs -->
 	<script async src="assets/vendors/modernizr.min.js"></script>
 
+	<script type="text/javascript">
+		var CookieBanner = (function() {
+    return {
+        'cookieDuration': 90,                           // Number of days before the cookie expires, and the banner reappears
+        'cookieName': 'cookieConsent',                  // Name of our cookie
+        'cookieAcceptedValue': 'analytics_accepted',    // Value of cookie if user accepts
+        'cookieDeniedValue': 'analytics_denied',
+        'privacy_policy_url': '/privacy-policy/',       // Link to your privacy policy
+        'consentCallBack': (function () {               // Is called on every page-load if user accepts cookies
+            console.error("You must assign a call back function to CookieBanner.consentCallBack")
+        }),
+        '_createDiv': function(html) {
+            var bodytag = document.getElementsByTagName('body')[0];
+            var div = document.createElement('div');
+            div.setAttribute('id','cookie-law');
+            div.innerHTML = html;
+
+            bodytag.insertBefore(div,bodytag.firstChild); // Adds the Cookie Law Banner just after the opening <body> tag
+
+            document.getElementsByTagName('body')[0].className+='cookiebanner'; //Adds a class to the <body> tag when the banner is visible
+
+        },
+
+        '_createCookie': function(name, value, days) {
+            var expires;
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                expires = "; expires="+date.toGMTString();
+            }
+            else {
+                expires = "";
+            }
+            document.cookie = name+"="+value+expires+"; path=/";
+        },
+
+        '_cookieExists': function(name) {
+            return document.cookie.indexOf(name + "=") !== -1;
+        },
+
+        '_triggerCallBackIfUserAccepted': function () {
+            if (CookieBanner.hasUserAccepted()) {
+                CookieBanner.consentCallBack()
+            }
+        },
+
+        'hasUserAccepted': function() {
+            return document.cookie.indexOf(CookieBanner.cookieAcceptedValue) !== -1;
+        },
+
+        '_eraseCookie': function(name) {
+            CookieBanner._createCookie(name,"",-1);
+        },
+
+        'createAcceptCookie': function() {
+            CookieBanner._createCookie(CookieBanner.cookieName, CookieBanner.cookieAcceptedValue, CookieBanner.cookieDuration);
+        },
+
+        'createDenyCookie': function() {
+            CookieBanner._createCookie(CookieBanner.cookieName, CookieBanner.cookieDeniedValue, CookieBanner.cookieDuration);
+        },
+
+        'closeBanner': function() {
+            var element = document.getElementById('cookie-law');
+            element.parentNode.removeChild(element);
+        },
+
+        'accept': function() {
+            CookieBanner.createAcceptCookie();
+            CookieBanner.closeBanner();
+            CookieBanner._triggerCallBackIfUserAccepted()
+        },
+
+        'deny': function() {
+            CookieBanner.createDenyCookie();
+            CookieBanner.closeBanner();
+        },
+
+        'showIfCookieMissing': function(html) {
+            if(CookieBanner._cookieExists(CookieBanner.cookieName) === false){
+                CookieBanner._createDiv(html);
+            }
+            CookieBanner._triggerCallBackIfUserAccepted()
+        }
+    }
+
+})();
+
+window.onload = function(){
+    var html = '<div class="row">' +
+        '<div class="col-lg-9">' +
+        'I would like to use Google Analytics to know how many people visit my site. <b>If you agree, your IP address will be anonymized.</b> ' +
+        'You can read the legal details in my site\'s ' +
+        '<a href="' + CookieBanner.privacy_policy_url + '">Privacy Policy</a>. ' +
+        'By clicking "Accept", you agree to my use of cookies for the purpose of analytics.' +
+        '</div>'
+
+    html += '<div class="col-lg-3">'
+    html += '<div class="btn btn-lg btn-block btn-primary" style="max-width:150px;" id="btn_accept" onclick="CookieBanner.accept();"><span>Accept</span></div>';
+    html += '<div class="btn btn-lg btn-block btn-default" style="max-width:150px;" id="btn_deny" onclick="CookieBanner.deny();"><span>Deny</span></div>';
+    html += '</div></div>' // col-lg-3, row
+    CookieBanner.consentCallBack = (function () {
+        // Google Analytics
+        console.log("Loading Google Analytics, because you have accepted it's use.");
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'G-3H3C9MFB0P', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+
+    })
+    CookieBanner.showIfCookieMissing(html);
+}
+	</script>
+
 	<style>
 
 	.iconbox-color-pippin .iconbox-icon-container {
@@ -50,6 +168,24 @@
 		color: #2D2F61;
 	}
 
+	#cookie-law {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0px 2%;
+    background-color: #ccc;
+    z-index: 999;
+	opacity: 0.85;
+}
+
+	#cookie-law > div > div {
+		margin: 1em;
+		font-size: 12px;
+		line-height: 1.4;
+	}
 	</style>
 	
 </head>
